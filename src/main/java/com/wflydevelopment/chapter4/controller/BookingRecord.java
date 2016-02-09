@@ -9,6 +9,7 @@ import com.wflydevelopment.chapter4.entity.Seat;
 
 @NamedView
 public class BookingRecord implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int bookedCount = 0;
 	
 	public int getBookedCount() {

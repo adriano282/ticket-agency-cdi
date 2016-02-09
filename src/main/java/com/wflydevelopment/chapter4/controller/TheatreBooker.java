@@ -11,10 +11,12 @@ import javax.inject.Named;
 
 import org.jboss.logging.Logger;
 
+import com.wflydevelopment.chapter4.annotations.Logged;
 import com.wflydevelopment.chapter4.boundary.TheatreBox;
 
 @Named
 @SessionScoped
+@Logged
 public class TheatreBooker implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -23,7 +25,7 @@ public class TheatreBooker implements Serializable {
 	
 	@Inject
 	private TheatreBox theatreBox;
-	
+		
 	@Inject
 	private FacesContext facesContext;
 	

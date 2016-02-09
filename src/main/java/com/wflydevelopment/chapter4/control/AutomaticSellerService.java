@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.Optional;
 
 import javax.annotation.Resource;
-import javax.ejb.EJB;
 import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.ejb.Timer;

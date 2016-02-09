@@ -10,15 +10,10 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import javax.ejb.AccessTimeout;
 import javax.ejb.Lock;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.ejb.Timeout;
-import javax.ejb.Timer;
-import javax.ejb.TimerConfig;
-import javax.ejb.TimerService;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
@@ -34,13 +29,8 @@ public class TheatreBox {
 	@Inject
 	private Event<Seat> seatEvent;
 	
-	@Resource 
-	private TimerService timerService;
-	
-	private static final long DURATION = TimeUnit.SECONDS.toMillis(60);
-	
-	private static final Logger logger = 
-			Logger.getLogger(TheatreBox.class);
+	@Inject
+	private Logger logger;
 	
 	private Map<Integer, Seat> seats;
 	
@@ -82,15 +72,5 @@ public class TheatreBox {
 	private Seat getSeat(int seatId) {
 		final Seat seat = seats.get(seatId);
 		return seat;
-	}
-	
-	public void createTimer() {
-		timerService.createSingleActionTimer(DURATION, new TimerConfig());
-	}
-	
-	@Timeout
-	public void timeout(Timer timer) {
-		logger.info("Re-building Theatre Map.");
-		setupTheatre();
 	}
 }
