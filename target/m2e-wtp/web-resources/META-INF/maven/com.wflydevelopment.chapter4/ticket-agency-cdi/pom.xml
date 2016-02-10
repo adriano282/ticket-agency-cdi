@@ -8,29 +8,30 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-	<dependencyManagement>
+    <dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.richfaces</groupId>
-				<artifactId>richfaces-bom</artifactId>
-				<version>4.3.7.Final</version>
+				<artifactId>richfaces</artifactId>
+				<version>4.5.1.Final</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
 		</dependencies>
-	</dependencyManagement> 
+	</dependencyManagement>
   	<dependencies>
-	  	 <dependency>
+	  	
+	  	 <!-- <dependency>
 			<groupId>org.richfaces.ui</groupId>
 			<artifactId>richfaces-components-ui</artifactId>
 		
 		</dependency>
-		<!--
+		
 		<dependency>
 			<groupId>org.richfaces.core</groupId>
 			<artifactId>richfaces-core-impl</artifactId>
-		</dependency>
-		 -->
+		</dependency> 
+		  -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
